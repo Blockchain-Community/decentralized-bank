@@ -1,4 +1,3 @@
-# decentralized-bank
+# Decentralized Bank
 
-
-test 123
+This is a decentralized banking application.
