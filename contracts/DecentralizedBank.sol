@@ -30,7 +30,7 @@ contract DecentralizedBank {
 
     // create user
     function createUser(string memory _userName) public {
-        require(bytes(_userName).length > 0 && msg.sender != address(0x0));
+        require(bytes(_userName).length > 0 && msg.sender != address(0x0), 'Username & Address must not be null.');
 
         userCount++;
 
@@ -41,7 +41,7 @@ contract DecentralizedBank {
 
     // send amount
     function sendAmount(uint256 _id) public payable {
-        require(_id > 0 && _id <= userCount); // make sure id is valid
+        require(_id > 0 && _id <= userCount, 'The user is not valid.'); // make sure id is valid
 
         User memory _user = users[_id];
 

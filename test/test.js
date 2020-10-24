@@ -65,8 +65,8 @@ contract('Decentragram', ([deployer, currentUser, sender]) => {
             const user = await decentralizedBank.users(userCount)
 
             assert.equal(user.id.toNumber(), userCount.toNumber(), 'id is correct')
-            assert.equal(user.userName, 'Laxman Rai', 'description is correct')
-            assert.equal(user.userAddress, currentUser, 'user is correct')
+            assert.equal(user.userName, 'Laxman Rai', 'username is correct')
+            assert.equal(user.userAddress, currentUser, 'user address is correct')
             assert.equal(user.amount, '0', 'amount is correct')
         })
 
@@ -82,8 +82,8 @@ contract('Decentragram', ([deployer, currentUser, sender]) => {
             const event = result.logs[0].args
 
             assert.equal(event.id.toNumber(), userCount.toNumber(), 'id is correct')
-            assert.equal(event.userName, 'Laxman Rai', 'description is correct')
-            assert.equal(event.userAddress, currentUser, 'user is correct')
+            assert.equal(event.userName, 'Laxman Rai', 'username is correct')
+            assert.equal(event.userAddress, currentUser, 'user address is correct')
             assert.equal(event.amount, '1000000000000000000', 'amount is correct')
 
             // Check that user received funds
