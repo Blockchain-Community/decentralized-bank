@@ -34,9 +34,9 @@ contract DecentralizedBank {
 
         userCount++;
 
-        users[userCount] = User(userCount, _userName, msg.sender, 0);
+        users[userCount] = User(userCount, _userName, msg.sender, msg.sender.balance);
 
-        emit UserCreated(userCount, _userName, msg.sender, 0);
+        emit UserCreated(userCount, _userName, msg.sender, msg.sender.balance);
     }
 
     // send amount
